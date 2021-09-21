@@ -6,18 +6,12 @@ const refs ={
     text: document.querySelector('#text')
 };
 
-
-
-refs.input.addEventListener('focus', onInputFocus);
-function onInputFocus(event){
-console.log( 'незнакомец')}
-
-
-refs.input.addEventListener('input', onInputChange);
-function onInputChange(event){
-console.log(event.currentTarget.value);
-
-
-
+refs.input.addEventListener('input', inputChange);
+function inputChange(e){
+    if (refs.input.value ===''){
+        refs.output = 'незнакомец'
+    }
+    else{
+        refs.output.textContent = e.currentTarget.value;
+    }
 }
-
